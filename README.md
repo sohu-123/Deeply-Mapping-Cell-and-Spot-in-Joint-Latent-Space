@@ -13,6 +13,7 @@ Single‑cell RNA‑seq (scRNA‑seq) captures gene expression at high resolutio
 ## 🚀 Getting Started
 
 ### Prerequisites
+conda env create -f environment.yml
 
 - Python 3.8 or later  
 - PyTorch (version ≥1.10)  
@@ -21,6 +22,7 @@ Single‑cell RNA‑seq (scRNA‑seq) captures gene expression at high resolutio
 ### Installation
 
 Clone the repository and install the required packages:
+conda env create -f environment.yml
 
 import os
 import scanpy as sc
