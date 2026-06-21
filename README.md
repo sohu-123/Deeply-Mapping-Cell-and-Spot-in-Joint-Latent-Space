@@ -12,32 +12,6 @@ Single‑cell RNA‑seq (scRNA‑seq) captures gene expression at high resolutio
 - Predicting unmeasured gene expression in spatial data  
 - Integrating multiple datasets across technologies
 
-
-
-
-## 🚀 Getting Started
-
-### Prerequisites
-conda env create -f environment.yml
-
-- Python 3.8 or later  
-- PyTorch (version ≥1.10)  
-- CUDA‑capable GPU (recommended)  
-
-### Installation
-
-Clone the repository and install the required packages:
-conda env create -f environment.yml
-
-import os
-import scanpy as sc
-import pandas as pd
-import seaborn as sns
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
-from scipy.stats import pearsonr, spearmanr
-from torch.nn.functional import softmax, cosine_similarity
-import logging
-import numpy as np
 ## Project Summary
 
 This repository implements a method for mapping single-cell RNA-seq (scRNA-seq) and spatial transcriptomics (ST) data into a joint latent space. The approach learns a shared representation that aligns cells and spatial spots, enabling cross-modal integration, spatial expression prediction, and downstream analyses such as cell-to-spot mapping.
