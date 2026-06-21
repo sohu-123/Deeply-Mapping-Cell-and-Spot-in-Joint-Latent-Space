@@ -1,6 +1,6 @@
 # Deeply Mapping Cell and Spot in Joint Latent Space
 
-This repository provides the implementation for **deeply mapping single‑cell RNA‑seq and spatial transcriptomics data into a joint latent space**. The model learns a shared representation that aligns cellular and spatial measurements, enabling cross‑modality integration, imputation, and downstream analysis.
+scMagnet is a deep learning framework designed to bridge the technological gap between scRNA-seq and spatial transcriptomics (ST) by reconstructing genome-wide spatial transcriptomes at single-cell resolution. Utilizing a robust triple alignment strategy across count and latent spaces—guided by manifold regularization—our method accurately maps scRNA-seq cells to ST spots and directly to detected cells in tissue images. The framework takes standard scRNA-seq and spatial data as input to output high-fidelity cell-to-spot mappings. Beyond spatial reconstruction, scMagnet empowers downstream analyses, including the precise estimation of spatial gene regulation patterns and the identification of key regulatory modules across different biological conditions.
 
 ## 📌 Overview
 
@@ -11,26 +11,6 @@ Single‑cell RNA‑seq (scRNA‑seq) captures gene expression at high resolutio
 - Aligning cell types with spatial locations  
 - Predicting unmeasured gene expression in spatial data  
 - Integrating multiple datasets across technologies
-
-## Project Summary
-
-This repository implements a method for mapping single-cell RNA-seq (scRNA-seq) and spatial transcriptomics (ST) data into a joint latent space. The approach learns a shared representation that aligns cells and spatial spots, enabling cross-modal integration, spatial expression prediction, and downstream analyses such as cell-to-spot mapping.
-
-Key capabilities:
-- Align scRNA-seq cells with spatial spots in a shared embedding
-- Predict spatial gene expression from scRNA-seq-derived cell profiles
-- Produce a cell–spot assignment matrix for spatial deconvolution
-
-## Repository Structure
-
-- `JointEmbedding4.py`: Main experiment script containing training, evaluation, and optimization flows.
-- `DrawPicture2.py`: Visualization utilities for spatial plots and embeddings.
-- `environment.yml`: Conda environment specification for reproducibility.
-- `README.md`: Original README; this file is an enhanced English version.
-- `20k_markers.npy`: Marker gene list used by the scripts.
-- `harmony_embedding.txt`: PCA/embedding guidance used during training.
-- `spot_loc_with_counts_r_f.csv`: Spot metadata used for adjacency and smoothing.
-- Additional folders: `compare/`, `dataGithub/`, `method/` contain comparisons, auxiliary data, and notebooks.
 
 ## Dependencies and Environment
 
@@ -91,12 +71,17 @@ After a successful run, the script generates files such as:
 - Ensure `Visium_FAD.h5ad` includes `adata.obsm['spatial']` or adapt the script to use coordinates from another column.
 - For quick testing, use smaller h5ad files or subsets of the data before running full-scale experiments.
 
-## Extending the Project
+## Repository Structure
 
-Possible directions:
-- Explore additional spatial smoothing regularizers
-- Expand the marker gene set for more robust predictions
-- Adapt the pipeline for other ST data formats (Slide-seq, MERFISH, etc.)
+- `JointEmbedding4.py`: Main experiment script containing training, evaluation, and optimization flows.
+- `DrawPicture2.py`: Visualization utilities for spatial plots and embeddings.
+- `environment.yml`: Conda environment specification for reproducibility.
+- `README.md`: Original README; this file is an enhanced English version.
+- `20k_markers.npy`: Marker gene list used by the scripts.
+- `harmony_embedding.txt`: PCA/embedding guidance used during training.
+- `spot_loc_with_counts_r_f.csv`: Spot metadata used for adjacency and smoothing.
+- Additional folders: `compare/`, `dataGithub/`, `method/` contain comparisons, auxiliary data, and notebooks.
+
 
 ## Contact
 
